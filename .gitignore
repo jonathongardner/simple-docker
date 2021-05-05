@@ -1,0 +1,4 @@
+/tars/*
+!/tars/.keep
+/results/*
+!/results/.keep

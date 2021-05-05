@@ -1,0 +1,10 @@
+{
+  "license": "MIT",
+  "main": "lib/index.js",
+  "name": "js-test",
+  "version": "0.0.1",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "sb-exec": "^4.0.0"
+  }
+}
