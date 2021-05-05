@@ -2,3 +2,5 @@
 !/tars/.keep
 /results/*
 !/results/.keep
+/clean-results/*
+!/clean-results/.keep
