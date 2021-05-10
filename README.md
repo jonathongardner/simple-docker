@@ -9,6 +9,11 @@ docker build with-gemfile/ -t ghcr.io/jonathongardner/small-docker:with-gemfile
 docker build with-gemfile-and-download/ -t ghcr.io/jonathongardner/small-docker:with-gemfile-and-download
 docker build with-binary/ -t ghcr.io/jonathongardner/small-docker:with-binary
 docker build with-multistep/ -t ghcr.io/jonathongardner/small-docker:with-multistep
+docker build with-multistep-from-image/ -t ghcr.io/jonathongardner/small-docker:with-multistep-from-image
+docker build with-multistep-js/ -t ghcr.io/jonathongardner/small-docker:with-multistep-js
+docker build with-nothing/ -t ghcr.io/jonathongardner/small-docker:with-nothing
+docker build with-symlink/ -t ghcr.io/jonathongardner/small-docker:with-symlink
+docker build with-scratch/ -t ghcr.io/jonathongardner/small-docker:with-scratch
 ```
 
 Save image
@@ -22,6 +27,11 @@ docker save ghcr.io/jonathongardner/small-docker:with-gemfile-and-download > tar
 docker save ghcr.io/jonathongardner/small-docker:with-source-no-download > tars/small-image-with-source-no-download.tar
 docker save ghcr.io/jonathongardner/small-docker:with-binary > tars/small-image-with-binary.tar
 docker save ghcr.io/jonathongardner/small-docker:with-multistep > tars/small-image-with-multistep.tar
+docker save ghcr.io/jonathongardner/small-docker:with-multistep-from-image > tars/small-image-with-multistep-from-image.tar
+docker save ghcr.io/jonathongardner/small-docker:with-multistep-js > tars/small-image-with-multistep-js.tar
+docker save ghcr.io/jonathongardner/small-docker:with-nothing > tars/small-image-with-nothing.tar
+docker save ghcr.io/jonathongardner/small-docker:with-symlink > tars/small-image-with-symlink.tar
+docker save ghcr.io/jonathongardner/small-docker:with-scratch > tars/small-image-with-scratch.tar
 ```
 
 Push to github:

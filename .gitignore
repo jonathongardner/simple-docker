@@ -4,3 +4,5 @@
 !/results/.keep
 /clean-results/*
 !/clean-results/.keep
+/with-multistep-js/ui/*
+clean.rb
