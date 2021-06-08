@@ -14,6 +14,7 @@ docker build with-multistep-js/ -t ghcr.io/jonathongardner/small-docker:with-mul
 docker build with-nothing/ -t ghcr.io/jonathongardner/small-docker:with-nothing
 docker build with-symlink/ -t ghcr.io/jonathongardner/small-docker:with-symlink
 docker build with-scratch/ -t ghcr.io/jonathongardner/small-docker:with-scratch
+docker build with-simple-delete/ -t ghcr.io/jonathongardner/small-docker:with-simple-delete
 ```
 
 Save image
@@ -32,6 +33,7 @@ docker save ghcr.io/jonathongardner/small-docker:with-multistep-js > tars/small-
 docker save ghcr.io/jonathongardner/small-docker:with-nothing > tars/small-image-with-nothing.tar
 docker save ghcr.io/jonathongardner/small-docker:with-symlink > tars/small-image-with-symlink.tar
 docker save ghcr.io/jonathongardner/small-docker:with-scratch > tars/small-image-with-scratch.tar
+docker save ghcr.io/jonathongardner/small-docker:with-simple-delete > tars/small-image-with-simple-delete.tar
 ```
 
 Push to github:
@@ -45,6 +47,7 @@ docker push ghcr.io/jonathongardner/small-docker:with-gemfile-and-download
 docker push ghcr.io/jonathongardner/small-docker:with-source-no-download
 docker push ghcr.io/jonathongardner/small-docker:with-binary
 docker push ghcr.io/jonathongardner/small-docker:with-multistep
+docker push ghcr.io/jonathongardner/small-docker:with-simple-delete
 ```
 
 Trivy
@@ -55,5 +58,6 @@ docker run --rm -v $HOME/Library/Caches:/root/.cache/ -v $PWD:/tmp aquasec/trivy
 
 Syft
 ```
-docker run --rm -v $PWD:/tmp/my-path anchore/syft:v0.15 -o json docker-archive:/tmp/my-path/tars/small-image-with-delete.tar > results/syft/tar/with-delete.json
+docker run --rm -v $PWD:/tmp/my-path anchore/syft:v0.16 -o json docker-archive://tmp/my-path/tars/small-image-with-simple-delete.tar > results/syft/tar/with-simple-delete.json
+docker run --rm -v $PWD:/tmp/my-path anchore/syft:v0.16 --scope all-layers -o json docker-archive://tmp/my-path/tars/small-image-with-simple-delete.tar > results/syft/tar/with-simple-delete-extra.json
 ```
